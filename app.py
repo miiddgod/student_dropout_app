@@ -2,15 +2,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-import pickle
 print(np.__version__)
 
 # Page configuration
 st.set_page_config(page_title="Student Dropout Prediction", layout="wide")
 
-# Simpan model dengan format berbeda
-with open('model_pickle.pkl', 'wb') as f:
-    pickle.dump(model, f)
+# Load dan simpan ulang model
+model = joblib.load('model.pkl')
+joblib.dump(model, 'model_compat.pkl')
 
 # Load the cleaned data
 @st.cache_data

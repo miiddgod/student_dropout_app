@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import joblib
-from PIL import Image
 
 # Page configuration
 st.set_page_config(page_title="Student Dropout Prediction", layout="wide")

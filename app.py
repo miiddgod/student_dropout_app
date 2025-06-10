@@ -6,7 +6,7 @@ import joblib
 st.set_page_config(page_title="Student Dropout Prediction", layout="wide")
 
 # Load the trained model
-model = joblib.load('model.pkl')
+model = joblib.load('./model.pkl')
 
 # Load the cleaned data
 @st.cache_data

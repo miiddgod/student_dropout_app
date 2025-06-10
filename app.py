@@ -1,12 +1,15 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import joblib
+print(np.__version__)
 
 # Page configuration
 st.set_page_config(page_title="Student Dropout Prediction", layout="wide")
 
-# Load the trained model
-model = joblib.load('./model.pkl')
+# Load dan simpan ulang model
+model = joblib.load('model.pkl')
+joblib.dump(model, 'model_compat.pkl')
 
 # Load the cleaned data
 @st.cache_data
